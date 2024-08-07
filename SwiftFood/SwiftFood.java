@@ -11,7 +11,16 @@ class Customer {
         System.out.println("Address : " + address);
         System.out.println();
     }
+    public void payBill(double totalPrice, double discountPercentage) {
+        System.out.println("Calculating final amount to be paid......");
+        double priceAfterDiscount = totalPrice * (1 - (discountPercentage / 100));
+        System.out.println("Hi " + customerName
+                + ", your final bill amount after discount is: "
+                + (int) (priceAfterDiscount * 100) / 100.0);
+    }
 }
+
+
 public class SwiftFood {
     public static void main(String[] args) {
         // Object creation
@@ -22,5 +31,7 @@ public class SwiftFood {
         customer.contactNumber = 7856341287L;
         customer.address = "D089, St. Louis Street, Springfield, 62729";
         customer.displayCustomerDetails();
+        customer.payBill(500, 10);
+        System.out.println();
     }
 }
